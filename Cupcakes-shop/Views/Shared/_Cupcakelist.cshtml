@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Cupcakes_shop.BOL.Cupcake>
+
+<table class="table">
+    <tr>
+  
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datecreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateModified)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CupcakeName)
+            </td>
+            <td>
+                @string.Concat(@Html.DisplayFor(modelItem => item.CupcakePrice), "$")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datecreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateModified)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "CupcakeEdit", new { id = item.CupcakeId }) |
+                @Html.ActionLink("Details", "CupcakeDetails", new { id = item.CupcakeId }) |
+                @Html.ActionLink("Delete", "CupcakeDelete", new { id = item.CupcakeId })
+            </td>
+        </tr>
+    }
+
+</table>
+

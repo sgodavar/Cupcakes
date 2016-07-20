@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Cupcakes_shop.BOL.Ingredient>
+
+@{
+    ViewBag.Title = "Ingredient - Details";
+}
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-3.1.0.js"></script>
+<h2>Ingredient - Details</h2>
+
+
+
+<p>
+    @Html.ActionLink("Add Ingredients", "IngredientsAdd")
+</p>
+
+<table class="table">
+    <tr>     
+<th>
+            @Html.DisplayNameFor(model => model.IngredientName)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.IngredientName)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "IngredientsDelete", new { id=item.IngredientId, Ingredient=item.Cupcake })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "IngredientsEdit", new { id = item.IngredientId})
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model Cupcakes_shop.BOL.Cupcake
+
+@{
+    ViewBag.Title = "Cupcake-Details";
+}
+
+<h2>Cupcake-Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CupcakeName)
+        </dd>
+
+        <dt>
+            Price
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CupcakePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datecreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datecreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateModified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateModified)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("IngredientDetails", "IngredientDetails", new { id = Model.CupcakeId }) |
+    @Html.ActionLink("Home", "Index")
+    
+</p>

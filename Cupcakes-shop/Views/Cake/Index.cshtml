@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Cupcakes_shop.BOL.Cupcake>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>CUP CAKES IN STORE</h2>
+
+<p>
+    @Html.ActionLink("New", "CreateCupcake")
+</p>
+<div>
+    @Html.Partial("_Cupcakelist", Model)
+</div>
